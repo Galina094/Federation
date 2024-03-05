@@ -12,20 +12,26 @@
 
 <body>
 
+    <div class="background-img">
+    </div>
+
+
     <header class="main-header">
         <section class="header-name">
-            <img class="header-logo" src="img/Логотип Федерация плавания (2) без фона.png"
-                alt="Федерация плавания Королев">
-            <h1 class="h1_header">ФЕДЕРАЦИЯ ПЛАВАНИЯ г.о.КОРОЛЕВ</h1>
+            <a href="main_page.html"> <img class="header-logo" src="img/Логотип Федерация плавания (2) без фона.png"
+                    alt="Федерация плавания Королев">
+            </a>
+
+            <a href="main_page.html">
+                <h1 class="h1_header">ФЕДЕРАЦИЯ ПЛАВАНИЯ г.о.КОРОЛЕВ</h1>
+            </a>
+
             <div class="social-icons">
                 <a href="https://vk.com/club224471358">
-                    <img src="img/icons8-vk-48.png" alt="Vk icon">
-                </a>
-                <a href="https://www.youtube.com/watch?v=nALTgQDrQq8">
-                    <img src="img/icons8-youtube-50.png" alt="YouTube icon">
+                    <img class="vk_icon" src="img/icons8-vk-48.png" alt="Vk icon">
                 </a>
                 <a href="https://t.me/federaciya_plavaniya_korolev">
-                    <img src="img/icons8-логотип-telegram-50.png" alt="Telegram icon">
+                    <img class="telegram_icon" src="img/icons8-логотип-telegram-50.png" alt="Telegram icon">
                 </a>
             </div>
         </section>
@@ -33,72 +39,148 @@
         <section class="header-nav">
             <nav class="nav">
                 <ul class="main-menu">
-                    <li> <a href=""> О КОМИТЕТЕ </a>
+                    <li> <a href=""> КОМИТЕТ ФЕДЕРАЦИИ</a>
                         <ul>
+                            <li><a href="#"> О Федерации </a></li>
                             <li><a href="#"> Руководство </a></li>
-                            <li><a href="#"> Документы </a></li>
-                            <li><a href="#">Аккредитация</a></li>
-                            <li><a href="#">Внести пожертвование</a></li>
+                            <li><a href="#"> Документы Федерации </a></li>
+                            <li><a href="#">Сделать пожертвование</a></li>
                             <li><a href="#">Контакты</a></li>
+
                         </ul>
                     </li>
                     <li> <a href=""> КАЛЕНДАРЬ СОБЫТИЙ </a>
                         <ul>
                             <li><a href=""> Соревнования </a>
-                                <!-- <ul>
-                                    <li>
-                                        <a href=""> Фото </a>
-                                    </li>
-                                </ul> -->
                             </li>
                             <li><a href="">Общественная деятельность</a></li>
                         </ul>
                     </li>
-                    <li> <a href=""> УЧАСТНИКАМ </a>
+                    <li> <a href=""> ДОКУМЕНТЫ </a>
                         <ul>
-                            <li><a href=""> Правила комитета </a></li>
-                            <li><a href=""> Документы для участия</a></li>
-                            <li><a href="">some</a></li>
+                            <li><a href=""> Документы для соревнований </a></li>
+                            <li><a href="">Разряды и звания</a></li>
+                            <li><a href="">Приказы</a></li>
                         </ul>
                     </li>
-                    <li> <a href=""> РАЗРЯДЫ И ЗВАНИЯ </a>
+                    <!-- <li> <a href=""> РАЗРЯДЫ И ЗВАНИЯ </a>
                         <ul>
                             <li><a href=""> ЕВСК 2022-2025 </a></li>
                             <li><a href=""> Положения</a></li>
                             <li><a href="">Порядок присвоения разрядов и званий </a></li>
                         </ul>
-                    </li>
-                    <li> <a href=""> ПРИКАЗЫ </a>
-                        <ul>
+                    </li> -->
+                    <li> <a class="made-donation" href=""> СДЕЛАТЬ ПОЖЕРТВОВАНИЕ </a>
+                        <!-- <ul>
                             <li><a href=""> some </a></li>
-                            <li><a href=""> some </a></li>
-                            <li><a href=""> some </a></li>
-                        </ul>
+                            <liclass="li_5"><a href=""> some </a></liclass=>
+                                <liclass="li_5"><a href=""> some </a></liclass=>
+                        </ul> -->
                     </li>
 
-                    <li> <a href=""> ЧИСТЫЙ СПОРТ </a>
+                    <!-- <li> <a href=""> ЧИСТЫЙ СПОРТ </a>
                         <ul>
                             <li><a href=""> История </a></li>
                             <li><a href=""> some</a></li>
                             <li><a href="">some</a></li>
                         </ul>
-                    </li>
+                    </li> -->
 
                 </ul>
             </nav>
         </section>
+
+
+        <nav class="navbar bg-body-tertiary fixed-top">
+            <div class="container-fluid">
+                
+                    <div class="social-icons-nav-nav">
+                        <a href="https://vk.com/club224471358">
+                            <img class="vk_icon-nav" src="img/icons8-vk-48.png" alt="Vk icon">
+                        </a>
+                        <a href="https://t.me/federaciya_plavaniya_korolev">
+                            <img class="telegram_icon-nav" src="img/icons8-логотип-telegram-50.png" alt="Telegram icon">
+                        </a>
+                    </div>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                    aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">..........</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    КОМИТЕТ ФЕДЕРАЦИИ
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">О Федерации</a></li>
+                                    <li><a class="dropdown-item" href="#">Руководство</a></li>
+                                    <li><a class="dropdown-item" href="#">Документы Федерации</a></li>
+                                    <li><a class="dropdown-item" href="#">Сделать пожертвование</a></li>
+                                    <li><a class="dropdown-item" href="#">Контакты</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    КАЛЕНДАРЬ СОБЫТИЙ
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Соревнования</a></li>
+                                    <li><a class="dropdown-item" href="#">Общественная деятельность</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    ДОКУМЕНТЫ
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Документы для соревнований</a></li>
+                                    <li><a class="dropdown-item" href="#">Разряды и звания</a></li>
+                                    <li><a class="dropdown-item" href="#">Приказы</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">СДЕЛАТЬ ПОЖЕРТВОВАНИЕ</a>
+                            </li>
+
+
+                        </ul>
+                        <form class="d-flex mt-3" role="search">
+                            <input class="form-control me-2" type="search" placeholder="Поиск" aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit">Поиск</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+
+
     </header>
-
-
 
     <div id="carouselExampleFade" class="carousel slide carousel-fade">
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <div class="text">
-                    <h2 class="h2_carousel">24-25 КУБОК ПЕРВЕНСТВА г.КОРОЛЕВ</h2>
-                </div>
-                <img src="img/_MG_8477.JPG" class="d-block w-110 h-100" alt="...">
+                    <a href="page_news1.html">
+                        <h2 class="h2_carousel">УНИВЕРСИАДА 2024! <br /> <br />
+                            Федерация плавания г.о. Королев приглашает <br />всех студентов принять участие в
+                            Универсиаде
+                            2024! <span class="flare"></span></h2>
+                    </a>
 
+                </div>
+                <img src="img/_MG_8477.JPG" class="d-block w-100 h-100" alt="...">
 
                 <div class="image-filter"></div>
             </div>
@@ -121,6 +203,8 @@
         </button>
     </div>
 
+
+
     <section class="news center">
         <div class="name_of_news">
             <h2 class="h2_name_of_news"> Новости Федерации по плаванию</h2>
@@ -128,82 +212,124 @@
         <div class="menu_of_news">
             <div class="menu_of_news2">
                 <ul class="li_news_block">
+                    <li class="li_news li_news0"> <a class="a_li_news" href="page_news1.html"> УНИВЕРСИАДА 2024! <br />
+                            Федерация плавания г.о. Королев приглашает всех студентов принять участие в Универсиаде
+                            2024!
+                        </a></li>
 
-                    <li class="li_news li_news0"> <a class="a_li_news" href="#">Lorem ipsum dolor sit amet consectetur
-                            adipisicing elit. Magnam ipsa sint laborum doloribus nemo ullam? Numquam hic ut excepturi
-                            debitis!</a></li>
 
-                    <li class="li_news li_news1"><a class="a_li_news" href="#"> Lorem, ipsum dolor sit amet consectetur
-                            adipisicing elit.</a></li>
-                    <img class="img1 img4" src="img/_MG_8477.JPG" alt="">
+                    <li class="li_news li_news1"><a class="a_li_news" href="#"> 11.02.2024 в г. Раменское, бассейн
+                            Сатурн, прошли Московские областные соревнования ОБЛАСТЬ</a></li>
+                    <img class="img1 img4" src="img/11.02_Раменское.jpg"
+                        alt="11.02.2024 Раменское соревнования по плаванию">
 
                     <li class="li_news li_news2"><a class="a_li_news" href=""> Lorem, ipsum dolor sit amet consectetur
                             adipisicing elit. </a></li>
                     <img class="img1 img3" src="img/_MG_8613.JPG" alt="">
 
-                    <li class="li_news li_news3"><a class="a_li_news" href=""> Lorem, ipsum dolor sit amet consectetur
-                            adipisicing elit. </a></li>
-                    <img class="img1 img4" src="img/_MG_8477.JPG" alt="">
+                    <li class="li_news li_news3"><a class="a_li_news" href=""> 28.01.2024 в ВСК Вымпел, под эгидой
+                            Федерации Плавания г.о. Королев, состоялись городские соревнования по плаванию ЗОЛОТОЙ
+                            РЕЗЕРВ. </a></li>
+                    <img class="img1 img5" src="img/_MG_8477.JPG" alt="">
 
-                    <a href="#" class="li_menu_button">Все новости</a>
+                    <a href="page_news1.html" class="li_menu_button">Все новости</a>
                 </ul>
 
-                <img class="img1 img2" src="img/27ZL83ZzBVA.jpg" alt="">
-
-
-
+                <img class="img1 img2" src="img/_MG_8613.JPG" alt="Универсиада по плаванию 28.02.24 г.Королев">
             </div>
-
         </div>
     </section>
 
     <section class="accordion-main center">
-        <h2 class="h2_name_of_news">Календарь событий 2024 г.</h2>
-        <div class="accordion accordion-flush" id="accordionFlushExample">
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                        25.02.2024 - 26.02.2024 РЕГИОНАЛЬНЫЕ СОРЕВНОВАНИЯ
-                    </button>
-                </h2>
-                <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate
-                        the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+        <div class="name_of_accordion">
+            <div class="name_of_accordion_center">
+                <h2 class="h2_name_of_accordion">Календарь событий 2024 г.</h2>
+            </div>
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                            28.02.2024 УНИВЕРСИАДА
+                        </button>
+                    </h2>
+                    <div id="flush-collapseOne" class="accordion-collapse collapse"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">Федерация плавания г.о. Королев приглашает всех студентов принять
+                            участие в Универсиаде 2024! <br />
+                            28 февраля 2024г в бассейне ВСК Вымпел состоятся соревнования по плаванию среди студентов
+                            высших
+                            и средних учебных заведений нашего города. <br /><br />
+
+                            В программе соревнований:<br />
+                            - 50м вольный стиль;<br />
+                            - эстафета 4х50 м вольный стиль;<br />
+                            Команды будут соревноваться за кубок, а победители и призеры получат медали и
+                            грамоты!<br /><br />
+
+                            Ждём всех студентов 28.02.2024г в 10.00 бассейн ВЫМПЕЛ.<br />
+                            Предварительные заявки по тел. 8 960 533 63 64</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                            23.02.2024 Городской праздник «Разрешите поздравить?»
+                        </button>
+                    </h2>
+                    <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">Мероприятие «Разрешите поздравить?» организованно Администрацией
+                            города
+                            Королёв при содействии Федерации плавания г.о.Королев. <br />Были проведены спортивные
+                            эстафеты
+                            для детей. Ребята перетягивали канат, гоняли мячи, соревновались в скорости, ловкости,
+                            выносливости. <br />Эстафеты проводил тренер Школы плавания «Время Первых», Королевской
+                            Школа
+                            Плавания Бежко Павел Александрович.
+                            Все участники эстафет получили сладкие призы от Администрации города.<br /><br />
+                            Также Школой Плавания «Время Первых» была проведена беспроигрышная лотерея с игрушками и
+                            сладкими призами.<br /><br />
+                            Федерация плавания г.о. Королев поздравляет всех мужчин с «Днём защитника отечества»!<br />
+                            Желаем упорства, мужества, стального здоровья! Пусть в вашей жизни присутствует удача, сила
+                            воли, добро и спорт!
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseThree" aria-expanded="false"
+                            aria-controls="flush-collapseThree">
+                            11.02.2024 в г. Раменское, бассейн
+                            Сатурн, прошли Московские областные соревнования ОБЛАСТЬ
+                        </button>
+                    </h2>
+                    <div id="flush-collapseThree" class="accordion-collapse collapse"
+                        data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">В соревнованиях приняло участие 600 спортсменов из 45 городов. От
+                            нашего
+                            города участвовало 82 спортсмена: <br />
+                            1) Команда СШОР Королев (тренеры Дубасов И.Д., Медведев К.Н., Карпушин А.А);<br />
+                            2) Школа Плавания ВРЕМЯ ПЕРВЫХ (тренеры Дубасов И.Д., Шеина О.В, Карапутина И.А. и
+                            Гераськина
+                            Ю.О.).<br /><br />
+                            Ребята давали интервью, а также все участники получили подарки от команды GRC Group.
+                            <br />
+                            Королевские спортсмены принесли городу 34 медали, завоевав в нелегкой борьбе 13 золотых, 14
+                            серебряных и 7 бронзовых медалей.<br />
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                        25.02.2024 - 26.02.2024 РЕГИОНАЛЬНЫЕ СОРЕВНОВАНИЯ
-                    </button>
-                </h2>
-                <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate
-                        the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine
-                        this being filled with some actual content.</div>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                        25.02.2024 - 26.02.2024 РЕГИОНАЛЬНЫЕ СОРЕВНОВАНИЯ
-                    </button>
-                </h2>
-                <div id="flush-collapseThree" class="accordion-collapse collapse"
-                    data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate
-                        the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more
-                        exciting happening here in terms of content, but just filling up the space to make it look, at
-                        least at first glance, a bit more representative of how this would look in a real-world
-                        application.</div>
-                </div>
-            </div>
+
         </div>
 
+
     </section>
+
+
 
 
 
