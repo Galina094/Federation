@@ -24,7 +24,6 @@ body {
     max-width: 100vw;
 }
 
-
 img {
     max-width: 100%;
 }
@@ -32,6 +31,14 @@ img {
 a,
 u {
     text-decoration: none;
+}
+
+summary {
+    display: block;
+}
+
+summary::-webkit-details-marker {
+    display: none;
 }
 
 .center {
@@ -45,6 +52,10 @@ u {
     height: 35vh;
     width: 100%;
     position: relative;
+
+    &-nav_burger {
+        display: none;
+    }
 
     &_name {
         padding-top: 35px;
@@ -147,14 +158,21 @@ u {
 .breadcrumb {
     margin: 10px;
 
-    &_ul {
+    &_ul {        
         display: flex;
-        gap: 15px;
+        flex-wrap: wrap;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }    
+
+    &_li:not(:last-child)::after {
+        color: #1e1c1c;
+        display: inline-block;
+        margin: 0 .25rem;
+        content: "/";
     }
 
-    &_item {
-        text-decoration: none;
-    }
 }
 
 
@@ -217,9 +235,6 @@ u {
     }
 }
 
-.navbar {
-    display: none;
-}
 
 .anchor_up {
 
@@ -228,81 +243,8 @@ u {
     top: 95vh;
 }
 
-
-
-
-// .carousel {
-//     display: flex;
-//     justify-content: center;
-//     position: relative;
-//     width: 100%;
-//     height: 54vh;
-// }
-
-// .h2_carousel {
-//     text-align: center;
-//     align-self: center;
-//     letter-spacing: 2px;
-//     font-weight: 700;
-//     font-size: 40px;
-//     color: #f5f5f5;
-//     text-shadow:
-//         white 0.006em 0.006em 0.007em,
-//         #9c9c9c 1px 1px 1px,
-//         #9c9c9c 1px 2px 1px,
-//         #3b3b3b 1px 3px 1px,
-//         rgba(16, 16, 16, 0.4) 1px 18px 6px,
-//         rgba(16, 16, 16, 0.2) 1px 22px 10px,
-//         rgba(16, 16, 16, 0.2) 1px 26px 35px,
-//         rgba(16, 16, 16, 0.4) 1px 30px 65px,
-//         white -0.15em -0.1em 100px;
-//     position: relative;
-//     overflow-x: hidden;
-
-// }
-
-// .h2_carousel .flare {
-//     position: absolute;
-//     top: 0;
-//     height: 100%;
-//     width: 45px;
-//     transform: skewX(-45deg);
-//     animation: flareAnimation;
-//     left: -150%;
-//     background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.4));
-//     animation: flareAnimation 3s infinite linear;
-// }
-
-// @keyframes flareAnimation {
-//     0% {
-//         left: -150%;
-//     }
-
-//     100% {
-//         left: 150%;
-//     }
-// }
-
-// .text {
-//     position: absolute;
-//     z-index: 1;
-//     left: 18vw;
-//     top: 13vh;
-//     letter-spacing: 5px;
-//     max-width: 80vw;
-
-// }
-
-
-
-// .carousel-caption {
-//     bottom: 20rem;
-// }
-
-
-
 .news {
-    max-width: 80vw;
+    max-width: 85vw;
     max-height: 85vh;
     display: flex;
     flex-direction: column;
@@ -319,10 +261,12 @@ u {
         justify-content: center;
         background: #152084;
         min-width: 100%;
-        height: 80px;
+        min-height: 80px;
     }
 
     &_h2 {
+        width: 75%;
+        margin-left: 20%;
         align-self: center;
         font-weight: 700;
         font-size: 3em;
@@ -354,6 +298,7 @@ u {
         flex-wrap: nowrap;
         position: relative;
         justify-content: center;
+        gap: 40px;
     }
 
     &_li {
@@ -405,6 +350,8 @@ u {
         left: 0;
         z-index: 2;
         animation: ani 0.5s forwards;
+        max-width: 44vw;
+        max-height: 55vh;
 
     }
 
@@ -437,7 +384,7 @@ u {
     }
 
     &_button {
-        margin-left: 7rem;
+        text-align: center;
         display: flex;
         justify-content: center;
         display: inline-block;
@@ -445,7 +392,7 @@ u {
         border-radius: 10rem;
         color: #1e1c1c;
         text-transform: uppercase;
-        font-size: 1.5rem;
+        font-size: 1rem;
         letter-spacing: .15rem;
         transition: all .3s;
         position: relative;
@@ -453,7 +400,7 @@ u {
         z-index: 1;
         background-color: #d8e9ff;
         border: 2px solid #1f1f1f55;
-        margin-top: 25px;
+        margin: 2%;
     }
 
     &_button:after {
@@ -499,7 +446,34 @@ u {
     &__content {
         display: flex;
         flex-direction: column;
+    }
 
+    &__summary {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-weight: 500;
+        font-size: 25px;
+
+
+        &_text {
+            padding-top: 20px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-weight: 500;
+            font-size: 20px;
+        }
+    }
+
+
+    &__summary::before {
+        content: '\2B9F';
+        font-size: larger;
+    }
+
+    &_block[open]>&__summary::before {
+        content: '\2B9C';
+        font-size: larger;
     }
 
     &__name {
@@ -519,6 +493,7 @@ u {
             white -0.10em -0.1em 30px;
     }
 
+
     &_block {
         min-height: 50px;
         padding: 16px 20px;
@@ -531,15 +506,8 @@ u {
         box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
     }
 
-    &__summary_text {
-        padding-top: 20px;
-    }
+
 }
-
-
-
-// slider
-
 
 
 .slider {
@@ -547,7 +515,7 @@ u {
     flex-direction: column;
     align-items: center;
     margin: auto;
-    width: 98.88888888vw;
+    width: 100vw;
     height: 45vh;
 
 
@@ -575,7 +543,7 @@ u {
         height: 100%;
         position: relative;
         /* you can change the animation settings from below */
-        animation: slideshow 20s infinite;
+        // animation: slideshow 20s infinite;
     }
 
     /* define width and height for images*/
@@ -591,7 +559,7 @@ u {
         position: absolute;
         bottom: 50%;
         z-index: 1;
-        left: 6%;
+        left: 5.5%;
         top: 25%;
         letter-spacing: 2px;
         max-width: 70vw;
@@ -639,7 +607,6 @@ u {
 
 .slide-h1 {
     font-size: 40px;
-
 }
 
 .slide-img {
@@ -790,9 +757,6 @@ to which the button is associated. */
 
 
 
-
-
-
 /* page_news1 */
 
 .content_news {
@@ -891,226 +855,49 @@ to which the button is associated. */
         padding-right: calc(50% - 720px);
     }
 
-    .main-header {
-        height: 35vh;
+    .header {
+        padding-left: 30px;
+        padding-right: 30px;
+        height: 26vh;
+
+        &_name {
+            gap: 10px;
+        }
+
+        &_h1 {
+            font-weight: 800;
+            font-size: 40px;
+        }
+
+        &_logo {
+            width: 120px;
+            height: 170px;
+        }
+
     }
 
-    .header-name {
-        gap: 70px;
-    }
-
-    .h1_header {
-        font-weight: 800;
-        font-size: 40px;
-    }
-
-    .header-logo {
-        width: 120px;
-        height: 170px;
-    }
-
-    .main-menu {
-        top: 30vh;
-    }
-
-
-    .vk_icon:hover {
+    .social_icons_vk:hover {
         transform: scale(1.2);
     }
 
-    .telegram_icon:hover {
+    .social_icons_telegram:hover {
         transform: scale(1.2);
     }
 
-    .carousel {
-        height: 65vh;
+    .nav_main_menu {
+        top: 21.2vh;
     }
 
-    .h2_carousel {
-        font-size: 35px;
+    .news {
+        margin-top: 100px;
+
+        &_img3,
+        &_img4,
+        &_img5 {
+            max-width: 44vw;
+            height: 47.2vh
+        }
     }
-
-    .text {
-        left: 17vw;
-        top: 20vh;
-    }
-
-
-
-    .li_news_block {
-        padding-right: 1rem;
-    }
-
-
-
-
-
-
-    /* .news{ 
-    max-width: 1100px;
-    max-height: 600px;   
-    
-    
-}
-
-.name_of_news{
-    margin-bottom: 3em;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-.h2_name_of_news{
-    align-self: center;
-    @include transition(all 0.3s ease);
-    @include transform3d(rotateX(50deg) rotateZ(1deg));    
-    font-weight: 700;
-    font-size: 3em;
-    color: #230909;
-    text-shadow:
-      white 0.006em 0.006em 0.007em,
-      #9c9c9c 1px 1px 1px,
-      #9c9c9c 1px 2px 1px,      
-      #9c9c9c 1px 3px 1px,
-    
-      rgba(16, 16, 16, 0.4) 1px 18px 6px,
-      rgba(16, 16, 16, 0.2) 1px 22px 10px,
-      rgba(16, 16, 16, 0.2) 1px 26px 35px,
-      rgba(16, 16, 16, 0.4) 1px 30px 65px,
-      white -0.15em -0.1em 100px;
-    
-}
-
-
-.menu_of_news2{
-    display: flex;
-    flex-direction: row-reverse;
-    flex-wrap: nowrap;
-    position: relative;
-    justify-content: center;  
-    margin-left: 50px;  
-}
-
-.li_news_block{
-    margin-left: 70px;
-    margin-right: 20px;
-}
-
-
-.li_news{
-    list-style-type: none;
-    text-align: justify;
-    font-size: 20px;
-    height: auto;  
-    max-width: 450px;     
-    border-bottom: 1px solid #1f1f1f55;
-    color: #230909;
-    min-height: 100px;
-    
-    margin-bottom: 20px;    
-    line-height: 20px;
-    
-
-}
-
-.a_li_news{
-    color: #343333; 
-    font-family:'Tahoma';
-    font-weight: 500;
-}
-
-.li_news:hover{
-    font-size: 22px;
-    border-bottom: 1px solid #1f1f1f55;
-    border-top: 1px solid #1f1f1f55;
-    background-color: #62abff;
-    transition: 0.2s;
-
-}
-
-.img1{
-    max-width: 600px;
-    max-height: 380px;
-    
-    -webkit-box-shadow: 12px 29px 81px 0px rgba(110, 110, 110, 0.75);
-    -moz-box-shadow: 12px 29px 81px 0px rgba(86, 86, 86, 0.75);
-}
-
-
-
-.img3, .img4, .img5{ 
-    max-width: 580px;    
-    max-height: 420px;     
-    display: none;
-    position: absolute;
-    top:0;
-    left: 0;
-    z-index: 2; 
-    animation: ani 0.5s forwards;  
-         
-}
-
-@keyframes ani {    
-    0% {opacity: 0.5;}
-    100% {opacity: 1;}
-}
-
-
-.li_news1:hover ~ .img4{    
-    display: block;   
-  
-}
-.li_news2:hover ~ .img3{    
-    display: block;        
-}
-
-.li_news3:hover ~ .img5{    
-    display: block;        
-}
-
-.li_news3:hover ~ .img4{    
-    display: block;    
-}
-
-
-.li_menu_button {
-    margin-left: 7rem;
-    display: flex;
-    justify-content: center;    
-    display: inline-block;
-    padding: .75rem 1.25rem;
-    border-radius: 10rem;
-    color: #1e1c1c;
-    text-transform: uppercase;
-    font-size: 1.5rem;
-    letter-spacing: .15rem;
-    transition: all .3s;
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-    background-color: #d8e9ff;
-    border: 2px solid #1f1f1f55;
-    margin-top: 35px;   
-    
-}
-
-.li_menu_button:after {
-    content: '';    
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;    
-    border-radius: 10rem;
-    z-index: -2;
-  }
-
-  .li_menu_button:hover {
-    color: #000000;
-    background: #6da9f8;
-    padding: 1rem 1.25rem;
-    
-  } */
-
 
 
 
@@ -1124,115 +911,87 @@ to which the button is associated. */
         padding-right: calc(50% - 512px);
     }
 
-    .header-name {
-        gap: 50px;
-        padding-top: 50px;
+    .header {
+
+        &_name {
+            gap: 50px;
+            padding-top: 50px;
+        }
+
+        &_h1 {
+            font-weight: 600;
+        }
+
+        &_logo {
+            width: 100px;
+            height: 140px;
+        }
     }
 
-
-    .h1_header {
-        font-weight: 600;
-        font-size: 35px;
-    }
-
-    .header-logo {
-        width: 100px;
-        height: 140px;
-    }
-
-    .main-menu {
+    .nav_main_menu {
         margin-left: 70px;
 
+        & a {
+            font-size: 14px;
+            width: 200px;
+        }
     }
 
-    .main-menu a {
-        line-height: 40px;
-        font-size: 14px;
-        width: 200px;
-    }
-
-    .made-donation {
+    .nav_made_donation {
         min-width: 200px;
     }
 
-    .vk_icon {
-        max-width: 70%;
-        ;
+    .social_icons {
+        &_vk {
+            max-width: 70%;
+        }
+
+        &_telegram {
+            max-width: 70%;
+        }
+
     }
 
-    .YT_icon {
-        max-width: 70%;
+    .slideshow-wrapper_slide-text {
+        left: 4.5%;
+        top: 22%;
+        font-size: 27px;
+
+        .flare {
+            top: -5%;
+            height: 22vh;
+        }
     }
-
-    .telegram_icon {
-        max-width: 70%;
-    }
-
-
-
-
-
-    .h2_carousel {
-        font-size: 30px;
-    }
-
-    .text {
-        left: 10vw;
-        top: 22vh;
-    }
-
-
 
 
 
     .news {
-        max-height: 100vh;
+        margin-top: 100px;
+        max-width: 95vw;
+
+        &_h2 {
+            font-weight: 500;
+            font-size: 45px;
+        }
+
+        &_img1 {
+            width: 50vw;
+            height: 37vh;
+        }
+
+        .li_news_block {
+            padding: 0;
+            padding-right: 1rem;
+            padding-left: 1rem;
+        }
     }
 
-    .h2_name_of_news {
+    .accordion__name {
+        font-size: 45px;
         font-weight: 500;
     }
-
-    .img1 {
-        max-width: 50vw;
-    }
-
-
-    .menu_of_news2 {
-        display: flex;
-        flex-direction: column-reverse;
-        align-items: center;
-        gap: 20px;
-    }
-
-    .li_news_block {
-        padding: 0;
-        padding-right: 1rem;
-        padding-left: 1rem;
-    }
-
-    .li_news {
-        max-width: 700px;
-        min-height: 80px;
-    }
-
-    .h2_name_of_accordion {
-        font-weight: 500;
-    }
-
-    .li_menu_button {
-        margin-left: 14.5rem;
-
-    }
-
-
-
-
-
-
 
 }
-
 
 @media(max-width:768px) {
 
@@ -1241,267 +1000,104 @@ to which the button is associated. */
         padding-right: calc(50% - 384px);
     }
 
-    .header-name {
-        gap: 20px;
-        padding-top: 30px;
+    .nav_main_menu {
+        margin-left: 0px;
+
+        & a {
+            width: 170px;
+        }
     }
 
 
-    .h1_header {
-        font-weight: 600;
-        font-size: 25px;
-    }
+    .header {
 
-    .header-logo {
-        width: 80px;
-        height: 120px;
-    }
+        &_name {
+            gap: 20px;
+        }
 
-    .main-menu {
-        margin-right: 40px;
-        top: 28vh;
-        align-items: center;
-    }
+        &_h1 {
+            font-weight: 300;
+            font-size: 30px;
+            padding-bottom: 0;
+        }
 
-    .main-menu a {
-        line-height: 20px;
-        width: 130px;
+        &_logo {
+            width: 80px;
+            height: 120px;
+        }
 
     }
 
-    .vk_icon {
-        max-width: 60%;
+    .slideshow-wrapper_slide-text {
+        left: 4%;
+        top: 26%;
+        font-size: 18px;
     }
 
-    .telegram_icon {
-        max-width: 60%;
-    }
-
-
-
-
-
-    .h2_carousel {
-        font-size: 23px;
-    }
-
-    .text {
-        left: 11vw;
-        top: 22vh;
-    }
-
-
-
-
-
-    .news {
-        min-height: 800px;
-    }
-
-    .h2_name_of_news {
+    .slide-h1 {
         font-size: 30px;
     }
 
-    .li_news_block {
-        padding-right: 2rem;
-        padding-left: 2rem;
-        padding-top: 1rem;
-
-    }
-
-    .li_menu_button {
-        margin-left: 32%;
-        margin-top: 3%;
-    }
-
-
-    .h2_name_of_accordion {
-        font-size: 30px;
-    }
-
-
-
-
-
-
-
-
-}
-
-
-@media(max-width:625px) {
-
-    .center {
-        padding-left: calc(50% - 312.5px);
-        padding-right: calc(50% - 312.5px);
-    }
-
-    .header-name {
-        gap: 10px;
-        padding-top: 100px;
-        margin-left: 15px;
-    }
-
-
-    .h1_header {
-        font-size: 25px;
-        text-align: center;
-        margin-right: 20px;
-    }
-
-    .header-logo {
-        width: 100px;
-        height: inherit;
-
-    }
-
-    .header-logo:hover {
-        transform: none;
-    }
-
-
-
-    .main-menu {
-        display: none;
-    }
-
-
-
-    .social-icons-nav-nav {}
-
-    .vk_icon-nav {
-        width: 30%;
-
-    }
-
-    .telegram_icon-nav {
-        width: 30%;
-    }
-
-    .vk_icon {
-        display: none;
-    }
-
-    .telegram_icon {
-        display: none;
-    }
-
-    .navbar {
-        display: block;
-        background: linear-gradient(#ffffff, #bddeff) !important;
-    }
-
-    .offcanvas {
-        background: linear-gradient(#ffffff, #bddeff);
-    }
-
-
-    .carousel {
-        height: 45vh;
-    }
-
-
-    .h2_carousel {
-        font-size: 15px;
-        max-width: 350px;
-    }
-
-    .text {
-        left: 16vw;
-        top: 15vh;
-    }
-
-    .image-filter {
-        background: #36649bc9;
-    }
-
-    .carousel-control-next {
-        height: 100%;
-    }
-
-    .carousel-control-prev {
-        height: 100%;
-    }
-
-
-
-
-
     .news {
-        min-height: 800px;
-        margin-top: 50px;
-        gap: 15px;
+        min-height: 1000px;
+
+        &_menu {
+            flex-direction: column-reverse;
+            align-items: center;
+        }
+
+        &_h2 {
+            font-size: 35px;
+        }
+
+        &_img1 {
+            min-width: 70vw;
+            height: 30vh;
+            -webkit-box-shadow: 12px 9px 20px 0px rgba(110, 110, 110, 0.75);
+        }
+
+        .li_news_block {
+            padding: 0;
+            padding-top: 30px;
+        }
+
+        &_li {
+            max-width: 550px;
+            display: flex;
+            align-items: center;
+            line-height: 25px;
+        }
+
+        &_button {
+            margin-left: 10rem;
+        }
     }
 
-    .h2_name_of_news {
-        font-size: 22px;
-        text-align: center;
-    }
+    .accordion {
+        max-width: 95vw;
+        margin: 100px 17px 17px 17px;
 
-    .a_li_news {
-        font-size: 15px;
-    }
+        &__name {
+            font-size: 35px;
+        }
 
-    .li_menu_button {
-        margin-left: 22%;
-        margin-top: 13%;
-        font-size: 15px;
-    }
+        &__summary {
+            font-weight: 500;
+            font-size: 20px;
 
-    .img1 {
-        max-width: 75vw;
-    }
+            &_text {
+                padding-top: 20px;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                font-weight: 500;
+                font-size: 20px;
+            }
+        }
 
-
-    .menu_of_news2 {
-        gap: 10px;
-    }
-
-    .li_news_block {
-        padding: 0;
-        padding-right: 1rem;
-        padding-left: 1rem;
-    }
-
-    .li_news {
-        min-height: 60px;
-    }
-
-
-
-
-
-
-    .accordion-main {
-        margin-top: 70px;
-    }
-
-    .h2_name_of_accordion {
-        font-size: 22px;
-        text-align: center;
 
     }
-
-    .accordion-button {
-        font-family: Georgia, 'Times New Roman', Times, serif;
-        font-weight: 500;
-
-    }
-
-    .accordion-body {
-        font-family: Georgia, 'Times New Roman', Times, serif;
-        font-weight: 300;
-    }
-
-
-
-
-
-
-
-
 }
 
+@media(max-width:625px) {}
 
 @media(max-width:426px) {
 
@@ -1510,21 +1106,292 @@ to which the button is associated. */
         padding-right: calc(50% - 212.5px);
     }
 
-    .h2_carousel {
-        font-size: 15px;
-        max-width: 250px;
+    .header {
+
+        padding-left: 10px;
+        padding-right: 10px;
+        height: 26vh;
+        // overflow: hidden;
+
+
+
+
+
+
+        &_name {
+            gap: 20px;
+            padding-top: 25px;
+        }
+
+        &_h1 {
+            font-weight: 300;
+            font-size: 22px;
+            max-width: 350px;
+        }
+
+        &_logo {
+            width: 70px;
+            height: 100px;
+        }
+
+        .social_icons {
+            display: none;
+        }
     }
 
-    .carousel {
-        height: 35vh;
+    .nav {
+        display: none;
     }
 
-    .text {
-        left: 20vw;
-        top: 8vh;
+
+    .header-nav_burger {
+        display: block;
+        display: flex;
+        justify-content: flex-end;
     }
 
+    .burger {
+        display: flex;
+        justify-content: flex-end;
+        position: absolute;
+        z-index: 100;
+        top: 68%;
+
+
+        &_social_icons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            right: 0;
+        }
+
+
+        &_img {
+
+            width: 45px;
+        }
+
+        &[open] {
+            background: rgb(124, 210, 247);
+            box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
+        }
+
+        &[open] .burger__heading {
+            color: rgb(224, 91, 42);
+        }
+
+        &[open] path {
+            fill: rgb(224, 91, 42);
+        }
+
+        &__summary {
+            display: flex;
+            justify-content: flex-start;
+            gap: 11px;
+        }
+
+        &__heading {
+            font-style: normal;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 17px;
+        }
+
+        &__item {
+            margin-top: 16px;
+        }
+
+        &__head {
+            font-style: normal;
+            font-weight: 800;
+            font-size: 14px;
+            line-height: 17px;
+            color: rgb(0, 0, 0);
+            padding: 8px 11px 11px 11px;
+            border-bottom: 1px solid black;
+            border-left: 5px solid #890b0b;
+        }
+
+        &__item[open] .burger__head {
+            color: #890b0b;
+        }
+
+
+
+        &__link-box {
+            display: flex;
+            flex-direction: column;
+            gap: 11px;
+            padding: 26px 16px;
+        }
+
+        &__link {
+            font-style: normal;
+            font-weight: 800;
+            font-size: 14px;
+            line-height: 17px;
+            color: #152084;
+
+            &:hover {
+                color: #890b0b;
+            }
+        }
+    }
+
+
+    .burger_menu {
+        position: absolute;
+        z-index: 100;
+        top: 115%;
+        right: -350px;
+        transition: right .5s;
+        width: 302px;
+        height: auto;
+        padding: 32px 32px 10px 32px;
+        box-sizing: border-box;
+        background: linear-gradient(#ffffff, #bddeff);
+        box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
+
+    }
+
+    #check {
+        position: absolute;
+        left: -99999px;
+        visibility: hidden;
+    }
+
+    #check:checked~.burger_menu {
+        right: -10px;
+    }
+
+
+
+    .slideshow-wrapper_slide-text {
+        left: 4%;
+        top: 20%;
+        font-size: 14px;
+    }
+
+    .slide {
+
+        &-btn {
+            border: 0.1rem solid #152084;
+            width: 0.9rem;
+            height: 0.9rem;
+        }
+
+        &-h1 {
+            font-size: 20px;
+        }
+    }
+
+    .news {
+        min-height: 800px;
+
+        &_h2 {
+            font-size: 25px;
+            text-shadow: white 0.006em 0.006em 0.007em, #9c9c9c 1px 1px 1px, white -0.1em -0.1em 30px;
+        }
+
+        &_li {
+            line-height: 20px;
+            font-size: 16px;
+            padding: 1rem;
+        }
+
+        &_button {
+            margin-left: 7.5rem;
+            font-size: 1rem;
+            margin-top: 15px;
+        }
+    }
+
+    .accordion {
+        max-width: 95vw;
+        margin: 100px 17px 17px 17px;
+
+        &__name {
+            font-size: 25px;
+            text-shadow: white 0.006em 0.006em 0.007em, #9c9c9c 1px 1px 1px, white -0.1em -0.1em 30px;
+            padding-top: 20px;
+            margin: 0;
+        }
+
+        &__summary {
+            font-weight: 500;
+            font-size: 16px;
+
+            &_text {
+                padding-top: 20px;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                font-weight: 500;
+                font-size: 14px;
+            }
+        }
+
+
+    }
 }
+
+@media(max-width:376px) {
+
+    .center {
+        padding-left: calc(50% - 187px);
+        padding-right: calc(50% - 187px);
+    }
+
+    .header {
+        &_logo {
+            height: 90px;
+        }
+
+        &_name {
+            gap: 0;
+        }
+
+        &_h1 {
+            max-width: 300px;
+        }
+    }
+
+    .burger_img {
+        width: 40px;
+    }
+
+    .slideshow-wrapper_slide-text {
+        font-size: 12px;
+    }
+
+    .slide-btn {
+        width: 0.7rem;
+        height: 0.7rem;
+    }
+
+    .news {
+
+        margin-top: 50px;
+
+        &_name {
+            min-height: 60px;
+        }
+
+        &_h2 {
+            font-size: 22px;
+            text-align: center;
+        }
+    }
+
+    .news_button {
+        margin-left: 4rem;
+        margin-top: 15px;
+    }
+
+    .accordion__name {
+        font-size: 22px;
+        text-align: center;
+    }
+}
+
 
 @media(max-width:321px) {
 
@@ -1533,22 +1400,39 @@ to which the button is associated. */
         padding-right: calc(50% - 160px);
     }
 
-    .h2_carousel {
-        font-size: 15px;
-        max-width: 250px;
+    .burger_img {
+        width: 35px;
     }
 
-    .text {
-        left: 12vw;
-        top: 7vh;
+    .slider {
+        height: 40vh;
     }
 
-    .li_menu_button {
-        margin-left: 13%;
-        margin-top: 13%;
-        font-size: 15px;
+    .slide-h1 {
+        font-size: 18px;
     }
 
+    .slideshow-wrapper_slide-text {
+        font-size: 10px;
+    }
+
+    .slide-btn {
+        width: 0.7rem;
+        height: 0.7rem;
+    }
+
+    .news {
+        min-height: 850px;
+    }
+
+
+
+    .news_button {
+        margin-left: 4.5rem;
+
+    }
+
+
 }
 
 
@@ -1560,25 +1444,27 @@ to which the button is associated. */
 
 
 
-/*
-.video-box{
-    width: 100vw;
-    height: 100vh;
-    position: relative;
-}
 
-.video-heading{
-    color: aliceblue;
-    position: absolute;
-    left: 40%;
-    top: 20%;
-    z-index: 5;
-}
 
-.video{
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
-}
 
-*/
+
+
+// .video-box{
+//     width: 100vw;
+//     height: 100vh;
+//     position: relative;
+// }
+
+// .video-heading{
+//     color: aliceblue;
+//     position: absolute;
+//     left: 40%;
+//     top: 20%;
+//     z-index: 5;
+// }
+
+// .video{
+//     width: 100vw;
+//     height: 100vh;
+//     position: absolute;
+// }
